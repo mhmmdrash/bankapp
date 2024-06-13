@@ -24,11 +24,11 @@ public class User {
     private String email;
     private Long phone;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "users")
     @JsonIgnore
     private UserBankAccount account;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     private List<Transaction> transactions;
 
